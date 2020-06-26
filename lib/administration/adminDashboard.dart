@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:school_mgmt/authScreen.dart';
-import 'package:school_mgmt/models/auth.dart';
 import 'package:school_mgmt/widgets/entityCard.dart';
 
 import 'adminStudent.dart';

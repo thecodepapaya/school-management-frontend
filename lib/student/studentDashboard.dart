@@ -109,6 +109,21 @@ class _StudentDashboardState extends State<StudentDashboard> {
                           ),
                         ],
                       ),
+                      // TableRow(
+                      //   children: <Widget>[
+                      //     Padding(
+                      //       padding: tablePadding,
+                      //       child: Text("Last fee payment", style: tableTextStyle),
+                      //     ),
+                      //     Padding(
+                      //       padding: tablePadding,
+                      //       child: 
+                      //       // Text(
+                      //       //     widget.student.dob.toString().substring(0, 10),
+                      //       //     style: tableTextStyle),
+                      //     ),
+                      //   ],
+                      // ),
                     ],
                   ),
                 ),

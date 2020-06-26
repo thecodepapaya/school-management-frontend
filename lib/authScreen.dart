@@ -118,13 +118,10 @@ class _AuthScreenState extends State<AuthScreen> {
   }
 
   bool isValid() {
-    //TODO: fix return value
-    // return true;
     for (int i = 0; i < authList.length; i++) {
       if (usernameController.text == authList[i].username &&
           passwordController.text == authList[i].password &&
           role == authList[i].role) {
-        // getAppropriateEntity();
         return true;
       }
     }

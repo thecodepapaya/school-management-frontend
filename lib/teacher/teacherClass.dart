@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:school_mgmt/data/studentData.dart';
 import 'package:school_mgmt/models/class.dart';
 import 'package:school_mgmt/models/student.dart';
@@ -77,8 +76,8 @@ class _TeacherClassState extends State<TeacherClass> {
                                     .dob
                                     .toString()
                                     .substring(0, 10));
-                                http.Response response =
-                                    await StudentData.putData(
+                                // http.Response response =
+                                await StudentData.putData(
                                   Student(
                                     rollNumber: studentList[i].rollNumber,
                                     firstName: studentList[i].firstName,
@@ -118,8 +117,8 @@ class _TeacherClassState extends State<TeacherClass> {
                             ),
                             FlatButton(
                               onPressed: () async {
-                                http.Response response =
-                                    await StudentData.putData(
+                                // http.Response response =
+                                await StudentData.putData(
                                   Student(
                                     rollNumber: studentList[i].rollNumber,
                                     firstName: studentList[i].firstName,

@@ -37,7 +37,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         builder: (BuildContext contect) {
                           return AuthScreen(
                             authType: AuthType.teacher,
-                            // nextscreen: TeacherDashboard(),
                           );
                         },
                       ),
@@ -52,18 +51,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         builder: (BuildContext contect) {
                           return AuthScreen(
                             authType: AuthType.student,
-                            // nextscreen: StudentDashboard(
-                            //   //TODO: get actual students
-                            //   Student(
-                            //     attendance: "56",
-                            //     grade: "AA",
-                            //     rollNumber: "85214693",
-                            //     firstName: "null",
-                            //     lastName: "patel",
-                            //     dob: DateTime.now(),
-                            //     profilepic: null,
-                            //   ),
-                            // ),
                           );
                         },
                       ),
@@ -83,18 +70,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         builder: (BuildContext contect) {
                           return AuthScreen(
                             authType: AuthType.guardian,
-                            // nextscreen: GuardianDashboard(
-                            //   //TODO: get actual students
-                            //   Student(
-                            //     attendance: "56",
-                            //     grade: "AA",
-                            //     rollNumber: "85214693",
-                            //     firstName: "null",
-                            //     lastName: "patel",
-                            //     dob: DateTime.now(),
-                            //     profilepic: null,
-                            //   ),
-                            // ),
                           );
                         },
                       ),
