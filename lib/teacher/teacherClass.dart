@@ -53,10 +53,15 @@ class _TeacherClassState extends State<TeacherClass> {
                       context: context,
                       builder: (BuildContext context) {
                         var cont = TextEditingController();
+                        // var key = GlobalKey<FormState>();
                         return AlertDialog(
                           title: Text("Update attendance"),
                           content: TextFormField(
+                            // key: key,
                             controller: cont,
+                            // inputFormatters: [
+                            //   WhitelistingTextInputFormatter("[0-9]"),
+                            // ],
                           ),
                           actions: [
                             FlatButton(
@@ -66,8 +71,29 @@ class _TeacherClassState extends State<TeacherClass> {
                               child: Text("cancel"),
                             ),
                             FlatButton(
-                              onPressed: () {},
-                              child: Text("update"),
+                              onPressed: () async {
+                                print(studentList[i].dob.toString());
+                                print(studentList[i]
+                                    .dob
+                                    .toString()
+                                    .substring(0, 10));
+                                http.Response response =
+                                    await StudentData.putData(
+                                  Student(
+                                    rollNumber: studentList[i].rollNumber,
+                                    firstName: studentList[i].firstName,
+                                    lastName: studentList[i].lastName,
+                                    dob: studentList[i].dob,
+                                    profilepic: studentList[i].profilepic,
+                                    attendance: cont.text,
+                                    grade: studentList[i].grade,
+                                    classId: studentList[i].classId,
+                                  ),
+                                );
+                                Navigator.pop(context);
+                                // print(response.body);
+                              },
+                              child: Text("Update"),
                             ),
                           ],
                         );
@@ -79,7 +105,7 @@ class _TeacherClassState extends State<TeacherClass> {
                       builder: (BuildContext context) {
                         var cont = TextEditingController();
                         return AlertDialog(
-                          title: Text("create result"),
+                          title: Text("Update result"),
                           content: TextFormField(
                             controller: cont,
                           ),
@@ -91,8 +117,24 @@ class _TeacherClassState extends State<TeacherClass> {
                               child: Text("cancel"),
                             ),
                             FlatButton(
-                              onPressed: () {},
-                              child: Text("update"),
+                              onPressed: () async {
+                                http.Response response =
+                                    await StudentData.putData(
+                                  Student(
+                                    rollNumber: studentList[i].rollNumber,
+                                    firstName: studentList[i].firstName,
+                                    lastName: studentList[i].lastName,
+                                    dob: studentList[i].dob,
+                                    profilepic: studentList[i].profilepic,
+                                    attendance: studentList[i].attendance,
+                                    grade: cont.text,
+                                    classId: studentList[i].classId,
+                                  ),
+                                );
+                                Navigator.pop(context);
+                                // print(response.body);
+                              },
+                              child: Text("Update"),
                             ),
                           ],
                         );
@@ -117,11 +159,11 @@ class _TeacherClassState extends State<TeacherClass> {
           },
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: "Create Assignment",
-        child: Icon(Icons.add),
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {},
+      //   tooltip: "Create Assignment",
+      //   child: Icon(Icons.add),
+      // ),
     );
   }
 }
