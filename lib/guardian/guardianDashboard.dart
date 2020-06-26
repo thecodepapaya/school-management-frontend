@@ -31,7 +31,7 @@ class GuardianDashboard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CircleAvatar(
-                  child: Image.network(student.profilepic),
+                  backgroundImage: NetworkImage(student.profilepic),
                   radius: 80,
                 ),
                 SizedBox(width: 100),
@@ -110,7 +110,7 @@ class GuardianDashboard extends StatelessWidget {
                           ),
                           Padding(
                             padding: tablePadding,
-                            child: Text(student.dob.toString(),
+                            child: Text(student.dob.toString().substring(0, 10),
                                 style: tableTextStyle),
                           ),
                         ],
@@ -123,12 +123,14 @@ class GuardianDashboard extends StatelessWidget {
                   lineWidth: 12,
                   percent: double.parse(student.attendance) / 100,
                   center: Text("Attendance " + student.attendance + "%"),
+                  progressColor: Colors.blue,
                 ),
                 CircularPercentIndicator(
                   radius: 200,
                   lineWidth: 12,
                   percent: double.parse(student.grade) / 100,
                   center: Text("Grade " + student.grade + "%"),
+                  progressColor: Colors.blue,
                 ),
               ],
             ),

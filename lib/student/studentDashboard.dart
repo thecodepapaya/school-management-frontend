@@ -36,7 +36,7 @@ class _StudentDashboardState extends State<StudentDashboard> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CircleAvatar(
-                  child: Image.network(widget.student.profilepic),
+                  backgroundImage: NetworkImage(widget.student.profilepic),
                   radius: 80,
                 ),
                 SizedBox(width: 100),
@@ -103,7 +103,8 @@ class _StudentDashboardState extends State<StudentDashboard> {
                           ),
                           Padding(
                             padding: tablePadding,
-                            child: Text(widget.student.dob.toString(),
+                            child: Text(
+                                widget.student.dob.toString().substring(0, 10),
                                 style: tableTextStyle),
                           ),
                         ],
@@ -116,12 +117,14 @@ class _StudentDashboardState extends State<StudentDashboard> {
                   lineWidth: 12,
                   percent: double.parse(widget.student.attendance) / 100,
                   center: Text("Attendance " + widget.student.attendance + "%"),
+                  progressColor: Colors.blue,
                 ),
                 CircularPercentIndicator(
                   radius: 200,
                   lineWidth: 12,
                   percent: double.parse(widget.student.grade) / 100,
                   center: Text("Grade " + widget.student.grade + "%"),
+                  progressColor: Colors.blue,
                 ),
               ],
             ),

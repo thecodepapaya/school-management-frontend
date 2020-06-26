@@ -21,7 +21,7 @@ class TeacherDashboard extends StatelessWidget {
           padding: EdgeInsets.all(20),
           child: Center(
             child: GridView.count(
-              crossAxisCount: 3,
+              crossAxisCount: 4,
               children: classes
                   .map(
                     (c) => EntityCard(
@@ -42,54 +42,6 @@ class TeacherDashboard extends StatelessWidget {
                   )
                   .toList(),
             ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   crossAxisAlignment: CrossAxisAlignment.center,
-            //   children: [
-            //     EntityCard(
-            //       name: "Class 10",
-            //       onPressed: () {
-            //         Navigator.of(context).push(
-            //           MaterialPageRoute(
-            //             builder: (BuildContext contect) {
-            //               return TeacherClass(
-            //                 //TODO: remove dummy
-            //                 teacherClass: "Class 10",
-            //                 teacher: Teacher(
-            //                   teacherId: 125,
-            //                   firstName: "Space",
-            //                   lastName: "Cow",
-            //                   profilepic: null,
-            //                 ),
-            //               );
-            //             },
-            //           ),
-            //         );
-            //       },
-            //     ),
-            //     EntityCard(
-            //       name: "Class 11",
-            //       onPressed: () {
-            //         Navigator.of(context).push(
-            //           MaterialPageRoute(
-            //             builder: (BuildContext contect) {
-            //               return TeacherClass(
-            //                 //TODO: remove dummy value
-            //                 teacherClass: "Class 11",
-            //                 teacher: Teacher(
-            //                   teacherId: 125,
-            //                   firstName: "Space",
-            //                   lastName: "Cow",
-            //                   profilepic: null,
-            //                 ),
-            //               );
-            //             },
-            //           ),
-            //         );
-            //       },
-            //     ),
-            //   ],
-            // ),
           ),
         ),
       ),

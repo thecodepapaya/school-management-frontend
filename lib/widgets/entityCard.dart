@@ -21,9 +21,9 @@ class EntityCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Container(
+        child: SizedBox(
+          width: cardSize*1.6,
           height: cardSize,
-          width: cardSize * 1.6,
           child: Center(
             child: Text(this.name),
           ),
