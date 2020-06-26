@@ -1,4 +1,6 @@
 import 'package:school_mgmt/data/authData.dart';
+import 'package:school_mgmt/data/class.dart';
+import 'package:school_mgmt/data/guardiansData.dart';
 import 'package:school_mgmt/data/studentData.dart';
 import 'package:school_mgmt/data/teacherData.dart';
 
@@ -14,5 +16,7 @@ class Init {
     StudentData();
     TeacherData();
     AuthData();
+    GuardianData();
+    ClassData();
   }
 }

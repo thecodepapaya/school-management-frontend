@@ -20,7 +20,7 @@ class GuardianData {
     }
   }
 
-  static void refresh() {
-    getAllGuardians();
+  static void refresh() async{
+    await getAllGuardians();
   }
 }

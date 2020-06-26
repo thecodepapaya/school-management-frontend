@@ -40,10 +40,7 @@ class _AdminDashboardState extends State<AdminDashboard> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (BuildContext context) {
-                          return AuthScreen(
-                            authType: AuthType.administration,
-                            nextscreen: AdminStudent(),
-                          );
+                          return AdminStudent();
                         },
                       ),
                     );

@@ -20,6 +20,7 @@ class Student {
     @required this.profilepic,
     @required this.attendance,
     @required this.grade,
+    @required this.classId,
   });
 
   String rollNumber;
@@ -29,6 +30,7 @@ class Student {
   String profilepic;
   String attendance;
   String grade;
+  String classId;
 
   String get name => firstName + " " + lastName;
 
@@ -40,6 +42,7 @@ class Student {
         profilepic: json["profilepic"],
         attendance: json["attendance"],
         grade: json["grade"],
+        classId: json["class_name"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -51,5 +54,6 @@ class Student {
         "profilepic": profilepic,
         "attendance": attendance,
         "grade": grade,
+        "class_name": classId,
       };
 }

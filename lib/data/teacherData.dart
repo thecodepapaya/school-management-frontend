@@ -19,7 +19,7 @@ class TeacherData {
     }
   }
 
-  static void refresh() {
-    getAllTeachers();
+  static void refresh() async {
+    await getAllTeachers();
   }
 }

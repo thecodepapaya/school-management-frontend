@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:school_mgmt/administration/adminDashboard.dart';
-import 'package:school_mgmt/guardian/guardianDashboard.dart';
-import 'package:school_mgmt/models/student.dart';
-import 'package:school_mgmt/student/studentDashboard.dart';
-import 'package:school_mgmt/teacher/teacherDashboard.dart';
-import 'package:school_mgmt/teacher/teacherList.dart';
+import 'package:school_mgmt/authScreen.dart';
+import 'package:school_mgmt/models/auth.dart';
 
 import 'widgets/entityCard.dart';
 
@@ -39,7 +35,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (BuildContext contect) {
-                          return TeacherDashboard();
+                          return AuthScreen(
+                            authType: AuthType.teacher,
+                            // nextscreen: TeacherDashboard(),
+                          );
                         },
                       ),
                     );
@@ -51,17 +50,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (BuildContext contect) {
-                          return StudentDashboard(
-                            //TODO: get actual students
-                            Student(
-                              attendance: "56",
-                              grade: "AA",
-                              rollNumber: "85214693",
-                              firstName: "null",
-                              lastName: "patel",
-                              dob: DateTime.now(),
-                              profilepic: null,
-                            ),
+                          return AuthScreen(
+                            authType: AuthType.student,
+                            // nextscreen: StudentDashboard(
+                            //   //TODO: get actual students
+                            //   Student(
+                            //     attendance: "56",
+                            //     grade: "AA",
+                            //     rollNumber: "85214693",
+                            //     firstName: "null",
+                            //     lastName: "patel",
+                            //     dob: DateTime.now(),
+                            //     profilepic: null,
+                            //   ),
+                            // ),
                           );
                         },
                       ),
@@ -79,17 +81,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (BuildContext contect) {
-                          return GuardianDashboard(
-                            //TODO: get actual students
-                            Student(
-                              attendance: "56",
-                              grade: "AA",
-                              rollNumber: "85214693",
-                              firstName: "null",
-                              lastName: "patel",
-                              dob: DateTime.now(),
-                              profilepic: null,
-                            ),
+                          return AuthScreen(
+                            authType: AuthType.guardian,
+                            // nextscreen: GuardianDashboard(
+                            //   //TODO: get actual students
+                            //   Student(
+                            //     attendance: "56",
+                            //     grade: "AA",
+                            //     rollNumber: "85214693",
+                            //     firstName: "null",
+                            //     lastName: "patel",
+                            //     dob: DateTime.now(),
+                            //     profilepic: null,
+                            //   ),
+                            // ),
                           );
                         },
                       ),
@@ -102,7 +107,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (BuildContext contect) {
-                          return AdminDashboard();
+                          return AuthScreen(authType: AuthType.administration);
                         },
                       ),
                     );
